@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function filtrar() {
+            const filtro = document.getElementById("filtro").value.toLowerCase();
+            const lis = document.getElementsByTagName("li");
+
+            for (const li of lis) {
+                if (li.innerText.toLowerCase().includes(filtro)) {
+                    li.style.fontWeight = 'bold';
+                }
+
+                else {
+                    li.style.fontWeight = 'normal'
+                }
+
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: gainsboro;
+        }
+
+        .conteudo {
+            padding: 20px;
+            width: 240px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .conteudo .lista {
+            margin-top: 15px;
+            background-color: rgb(78, 1, 1);
+            color: white;
+            border-radius: 20px;
+            border: 1px solid black;
+        }
+
+        input[type=text] {
+            border-radius: 4px;
+            border: solid 1px rgb(78, 1, 1);
+        }
+    </style>
+    <title>Filtro</title>
+</head>
+
+<body>
+    <div class="conteudo">
+        <form>
+            <label for=""><b>Filtrar:</b> </label>
+            <input type="text" id="filtro" oninput="filtrar();">
+        </form>
+        <div class="lista">
+            <ul>
+                <li>Roberta</li>
+                <li>João</li>
+                <li>José</li>
+                <li>Maria</li>
+                <li>Lucas</li>
+                <li>Paula</li>
+                <li>Ketlyn</li>
+                <li>Gustavo</li>
+                <li>Fabio</li>
+                <li>Aline</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

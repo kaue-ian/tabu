@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function calcular() {
+            const multi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            const div_result = document.getElementById('exibirTexto')
+            const valor = document.getElementById('valorInput').value
+            div_result.innerHTML = '';
+            if (valor == '') {
+                div_result = ''
+            }
+            for (num of multi) {
+
+                div_result.innerHTML += (`${valor} * ${num} = ${valor * num} <br>`)
+            }
+
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: gainsboro;
+            color: white;}
+
+        .conteudo {
+            padding: 20px;
+            width: 350px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .conteudo .tabuada {
+            margin-top: 15px;
+            background-color: rgb(78, 1, 1);
+            border-radius: 20px;
+            border: 1px solid black;
+        }
+
+        #titulo {
+            color: rgb(255, 255, 255);
+            text-shadow: 1px 1px 1px rgb(0, 0, 0);
+        }
+        input[type=number] {
+    border-radius: 4px;
+    border: solid 1px rgb(218, 5, 5);
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+    </style>
+    <title>Tabuada com ONINPUT</title>
+</head>
+
+<body>
+    <div class="conteudo">
+        <h1 id="titulo">Tabuada com INPUT</h1>
+        <div class="tabuada">
+        <label for="tabu">Insira um valor para a tabuada:</label>
+        <input type="number" id="valorInput" name="valorInput" min="1" max="100" placeholder="1" oninput='calcular()'>
+        <div id="exibirTexto">
+
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>
